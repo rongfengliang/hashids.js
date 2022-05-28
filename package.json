@@ -1,5 +1,6 @@
 {
   "name": "@dalongrong/hashids",
+  "version": "1.0.0",
   "description": "Generate YouTube-like ids from numbers. Use Hashids when you do not want to expose your database ids to the user.",
   "keywords": [
     "hashids",
@@ -79,7 +80,7 @@
     "clean": "git clean -dfX --exclude=node_modules src && beemo typescript:sync-project-refs",
     "test:lint": "rrun eslint 'src/**'",
     "test:code": "beemo jest",
-    "p":"yarn publish",
+    "p":"yarn  publish",
     "test:types": "yarn rrun tsc --noEmit",
     "test:format": "yarn rrun prettier --check \"./{src,tests}/**/*[!.d].{.js,jsx,ts,tsx,json,md}\"",
     "test": "yarn test:format && yarn test:types && yarn test:lint && yarn test:code",
