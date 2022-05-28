@@ -3,7 +3,6 @@ import {
   fromAlphabet,
   isIntegerNumber,
   isPositiveAndFinite,
-  keepUnique,
   makeAnyOfCharsRegExp,
   makeAtLeastSomeCharRegExp,
   onlyChars,
@@ -12,6 +11,7 @@ import {
   splitAtIntervalAndMap,
   toAlphabet,
   withoutChars,
+  onlyUnique
 } from './util'
 
 const MIN_ALPHABET_LENGTH = 16
@@ -58,7 +58,7 @@ export default class Hashids {
 
     this.salt = saltChars
 
-    const uniqueAlphabet = keepUnique(alphabetChars)
+    const uniqueAlphabet = alphabetChars.filter(onlyUnique)
 
     if (uniqueAlphabet.length < MIN_ALPHABET_LENGTH) {
       throw new Error(

@@ -1,5 +1,5 @@
 {
-  "name": "hashids",
+  "name": "@dalongrong/hashids",
   "description": "Generate YouTube-like ids from numbers. Use Hashids when you do not want to expose your database ids to the user.",
   "keywords": [
     "hashids",

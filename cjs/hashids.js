@@ -23,7 +23,7 @@ class Hashids {
         const alphabetChars = Array.from(alphabet);
         const sepsChars = Array.from(seps);
         this.salt = saltChars;
-        const uniqueAlphabet = (0, util_1.keepUnique)(alphabetChars);
+        const uniqueAlphabet = alphabetChars.filter(util_1.onlyUnique);
         if (uniqueAlphabet.length < MIN_ALPHABET_LENGTH) {
             throw new Error(`Hashids: alphabet must contain at least ${MIN_ALPHABET_LENGTH} unique characters, provided: ${uniqueAlphabet.join('')}`);
         }

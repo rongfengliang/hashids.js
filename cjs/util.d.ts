@@ -1,5 +1,6 @@
 export declare type NumberLike = bigint | number;
 export declare const keepUnique: <T>(content: Iterable<T>) => T[];
+export declare function onlyUnique(value: any, index: number, self: any[]): boolean;
 export declare const withoutChars: (chars: string[], charsToExclude: string[]) => string[];
 export declare const onlyChars: (chars: string[], keepChars: string[]) => string[];
 export declare const isIntegerNumber: (n: NumberLike | string) => boolean;

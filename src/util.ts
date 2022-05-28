@@ -3,7 +3,9 @@ export type NumberLike = bigint | number
 export const keepUnique = <T>(content: Iterable<T>): T[] => [
   ...new Set(content),
 ]
-
+export function onlyUnique(value:any, index:number, self:any[]) {
+  return self.indexOf(value) === index;
+}
 export const withoutChars = (
   chars: string[],
   charsToExclude: string[],

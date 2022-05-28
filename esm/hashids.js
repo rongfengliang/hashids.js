@@ -1,4 +1,4 @@
-import { fromAlphabet, isIntegerNumber, isPositiveAndFinite, keepUnique, makeAnyOfCharsRegExp, makeAtLeastSomeCharRegExp, onlyChars, safeParseInt10, shuffle, splitAtIntervalAndMap, toAlphabet, withoutChars, } from './util.js';
+import { fromAlphabet, isIntegerNumber, isPositiveAndFinite, makeAnyOfCharsRegExp, makeAtLeastSomeCharRegExp, onlyChars, safeParseInt10, shuffle, splitAtIntervalAndMap, toAlphabet, withoutChars, onlyUnique } from './util.js';
 const MIN_ALPHABET_LENGTH = 16;
 const SEPARATOR_DIV = 3.5;
 const GUARD_DIV = 12;
@@ -21,7 +21,7 @@ export default class Hashids {
         const alphabetChars = Array.from(alphabet);
         const sepsChars = Array.from(seps);
         this.salt = saltChars;
-        const uniqueAlphabet = keepUnique(alphabetChars);
+        const uniqueAlphabet = alphabetChars.filter(onlyUnique);
         if (uniqueAlphabet.length < MIN_ALPHABET_LENGTH) {
             throw new Error(`Hashids: alphabet must contain at least ${MIN_ALPHABET_LENGTH} unique characters, provided: ${uniqueAlphabet.join('')}`);
         }

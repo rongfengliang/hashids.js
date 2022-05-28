@@ -1,6 +1,9 @@
 export const keepUnique = (content) => [
     ...new Set(content),
 ];
+export function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
 export const withoutChars = (chars, charsToExclude) => chars.filter((char) => !charsToExclude.includes(char));
 export const onlyChars = (chars, keepChars) => chars.filter((char) => keepChars.includes(char));
 export const isIntegerNumber = (n) => typeof n === 'bigint' ||

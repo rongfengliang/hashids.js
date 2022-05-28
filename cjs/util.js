@@ -1,10 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.makeAtLeastSomeCharRegExp = exports.makeAnyOfCharsRegExp = exports.splitAtIntervalAndMap = exports.safeParseInt10 = exports.fromAlphabet = exports.toAlphabet = exports.shuffle = exports.isPositiveAndFinite = exports.isIntegerNumber = exports.onlyChars = exports.withoutChars = exports.keepUnique = void 0;
+exports.makeAtLeastSomeCharRegExp = exports.makeAnyOfCharsRegExp = exports.splitAtIntervalAndMap = exports.safeParseInt10 = exports.fromAlphabet = exports.toAlphabet = exports.shuffle = exports.isPositiveAndFinite = exports.isIntegerNumber = exports.onlyChars = exports.withoutChars = exports.onlyUnique = exports.keepUnique = void 0;
 const keepUnique = (content) => [
     ...new Set(content),
 ];
 exports.keepUnique = keepUnique;
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+exports.onlyUnique = onlyUnique;
 const withoutChars = (chars, charsToExclude) => chars.filter((char) => !charsToExclude.includes(char));
 exports.withoutChars = withoutChars;
 const onlyChars = (chars, keepChars) => chars.filter((char) => keepChars.includes(char));
