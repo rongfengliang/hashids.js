@@ -79,6 +79,7 @@
     "clean": "git clean -dfX --exclude=node_modules src && beemo typescript:sync-project-refs",
     "test:lint": "rrun eslint 'src/**'",
     "test:code": "beemo jest",
+    "p":"yarn publish",
     "test:types": "yarn rrun tsc --noEmit",
     "test:format": "yarn rrun prettier --check \"./{src,tests}/**/*[!.d].{.js,jsx,ts,tsx,json,md}\"",
     "test": "yarn test:format && yarn test:types && yarn test:lint && yarn test:code",
@@ -97,7 +98,8 @@
     "ts-node": "^10.4.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.com"
   },
   "release": {
     "branches": [
